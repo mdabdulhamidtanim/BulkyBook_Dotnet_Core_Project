@@ -15,7 +15,7 @@ using Start.Models;
 namespace Start.Areas.Admin.Controllers
 {
     [Area("admin")]
-    //[Authorize(Roles = SD.Role_Admin)]
+    [Authorize(Roles = SD.Role_Admin)]
     public class CompanyController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

@@ -1,16 +1,17 @@
-﻿using Start.DataAccess.Repository.IRepository;
-using Start.Models;
-using Start.Models.ViewModels;
-using Start.Utility;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
+using Start.DataAccess.Repository.IRepository;
 using Start.DataAccess.Repository.IRepository;
 using Start.Models;
+using Start.Models;
+using Start.Models.ViewModels;
+using Start.Models.ViewModels;
+using Start.Utility;
 using Start.Utility;
 using System.Diagnostics;
 using System.Security.Claims;
-using Start.Models.ViewModels;
 
 namespace Start.Areas.Admin.Controllers
 {
@@ -103,7 +104,21 @@ namespace Start.Areas.Admin.Controllers
             return RedirectToAction(nameof(Details), new { orderId = OrderVM.OrderHeader.Id });
         }
 
+        [HttpPost]
+        [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
+        public IActionResult CancelOrder()
+        {
 
+            var orderHeader = _unitOfWork.OrderHeader.Get(u => u.Id == OrderVM.OrderHeader.Id);
+
+           
+                _unitOfWork.OrderHeader.UpdateStatus(orderHeader.Id, SD.StatusCancelled, SD.StatusCancelled);
+            
+            _unitOfWork.Save();
+            TempData["Success"] = "Order Cancelled Successfully.";
+            return RedirectToAction(nameof(Details), new { orderId = OrderVM.OrderHeader.Id });
+
+        }
 
         #region API CALLS
 

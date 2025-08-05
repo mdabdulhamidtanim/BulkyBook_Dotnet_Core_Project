@@ -7,7 +7,7 @@ using Start.Utility;
 namespace Start.Areas.Admin.Controllers
 {
     [Area("admin")]
-    //[Authorize(Roles = SD.Role_Admin)]
+    [Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitofwork;
