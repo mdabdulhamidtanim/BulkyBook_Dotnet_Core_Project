@@ -1,3 +1,4 @@
+using BulkyBook.DataAccess.DbInitializer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.CodeAnalysis.Options;
@@ -7,7 +8,7 @@ using Start.DataAccess.DbInitializer;
 using Start.DataAccess.Repository;
 using Start.DataAccess.Repository.IRepository;
 using Start.Utility;
-using Start.DataAccess.DbInitializer;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

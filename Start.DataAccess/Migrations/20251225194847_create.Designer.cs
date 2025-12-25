@@ -12,8 +12,8 @@ using Start.DataAccess.Data;
 namespace Start.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250805211933_imagetableadded")]
-    partial class imagetableadded
+    [Migration("20251225194847_create")]
+    partial class create
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
