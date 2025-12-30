@@ -32,8 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Start.DataAccess\Start.DataAccess.csproj" />
-    <ProjectReference Include="..\Start.Models\Start.Models.csproj" />
+    <ProjectReference Include="..\Start.DataAccess\BulkyBook.DataAccess.csproj" />
+    <ProjectReference Include="..\Start.Models\BulkyBook.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

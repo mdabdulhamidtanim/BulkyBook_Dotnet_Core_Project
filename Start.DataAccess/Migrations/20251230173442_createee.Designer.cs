@@ -12,8 +12,8 @@ using Start.DataAccess.Data;
 namespace Start.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251225194847_create")]
-    partial class create
+    [Migration("20251230173442_createee")]
+    partial class createee
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
